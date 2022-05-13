@@ -1,0 +1,30 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Number</mat-label>
+    <input type="text"
+           placeholder="Pick one"
+           aria-label="Number"
+           matInput
+           [formControl]="myControlNumbers"
+           [matAutocomplete]="autoNumbers">
+    <mat-autocomplete #autoNumbers="matAutocomplete">
+      <!-- <mat-option *ngFor="let option of options" [value]="option">
+        {{option}}
+      </mat-option> -->
+      <mat-option *ngFor="let option of filteredOptionsNumbers | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Assignee</mat-label>
+    <input type="text" matInput [formControl]="myControlUsers" [matAutocomplete]="autoUsers">
+    <mat-autocomplete #autoUsers="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptionsUsers | async" [value]="option">
+        {{option.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+</form>
