@@ -9,11 +9,13 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DateParserComponent } from './date-parser/date-parser.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AutocompleteSimpleExampleComponent
+    AutocompleteSimpleExampleComponent,
+    DateParserComponent
   ],
   imports: [
     BrowserModule,
